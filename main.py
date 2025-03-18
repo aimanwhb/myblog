@@ -104,7 +104,7 @@ def register():
         if user:
             flash('Email already exist. Please try again')
             return redirect(url_for('login'))
-        password = generate_password_hash(form.password.data, method='pbkdf2:sha256', salt_length=16)
+        password = generate_password_hash(form.password.data, method='pbkdf2:sha256', salt_length=1)
         new_user=Users(
             email=form.email.data,
             password=password,
